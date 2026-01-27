@@ -2,7 +2,6 @@ import { cva } from "class-variance-authority";
 
 export const buttonVariants = cva(
   [
-    // Base - shared across all
     "inline-flex items-center justify-center gap-2 rounded-lg",
     "border outline-none select-none",
     "disabled:pointer-events-none disabled:opacity-50",
@@ -16,7 +15,6 @@ export const buttonVariants = cva(
           "font-medium",
           "transition-all duration-200",
           "hover:-translate-y-0.5 active:scale-[0.98]",
-          "shadow-md hover:shadow-lg",
         ],
       },
       variant: {
@@ -52,6 +50,34 @@ export const buttonVariants = cva(
         lg: "h-12 px-6 text-base",
       },
     },
+
+    // Only surface-specific tweaks here
+    compoundVariants: [
+      // Admin: muted, no-nonsense
+      {
+        surface: "admin",
+        variant: "default",
+        className: "bg-slate-800 border-slate-800 hover:bg-slate-700",
+      },
+      {
+        surface: "admin",
+        variant: "outline",
+        className: "border-slate-400 hover:border-slate-500",
+      },
+
+      // User: vibrant, shadows
+      {
+        surface: "user",
+        variant: "default",
+        className: "shadow-md hover:shadow-lg shadow-blue-500/25",
+      },
+      {
+        surface: "user",
+        variant: "destructive",
+        className: "shadow-md hover:shadow-lg shadow-red-500/25",
+      },
+    ],
+
     defaultVariants: {
       surface: "user",
       variant: "default",
