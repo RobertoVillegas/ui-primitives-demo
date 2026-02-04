@@ -19,3 +19,8 @@ between user/admin surfaces to change the base styling.
 npm install
 npm run dev
 ```
+
+## Live demo
+
+Try it instantly on StackBlitz:
+[https://stackblitz.com/~/github.com/RobertoVillegas/ui-primitives-demo](https://stackblitz.com/~/github.com/RobertoVillegas/ui-primitives-demo)
